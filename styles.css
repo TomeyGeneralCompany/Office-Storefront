@@ -1,0 +1,495 @@
+/* ============================================================
+   OFFICE SUPPLY STOREFRONT
+   CATEGORY NAVIGATION
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-gray-100);
+}
+
+/* ============================================================
+   01. OFFICE SUPPLY CATEGORY MENU
+   ============================================================ */
+
+.office-category-menu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+}
+
+/* ============================================================
+   02. CATEGORY MENU HEADER
+   ============================================================ */
+
+.office-category-menu__header {
+    padding:
+        var(--spacing-md)
+        var(--spacing-lg);
+    background-color: var(--color-gray-800);
+    color: var(--color-white);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-heavy);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   03. CATEGORY GRID
+   ============================================================ */
+
+.office-category-menu__grid {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ============================================================
+   04. CATEGORY ITEM
+   ============================================================ */
+
+.office-category {
+    min-width: 0;
+    border-right:
+        1px solid
+        var(--color-border-light);
+    border-bottom:
+        1px solid
+        var(--color-border-light);
+}
+
+.office-category:nth-child(4n) {
+    border-right: none;
+}
+
+/* ============================================================
+   05. CATEGORY LINK
+   ============================================================ */
+
+.office-category__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 58px;
+    padding:
+        var(--spacing-sm)
+        var(--spacing-md);
+    background-color: var(--color-white);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    transition:
+        background-color
+        var(--transition-fast),
+        color
+        var(--transition-fast);
+}
+
+.office-category__link:hover {
+    background-color: var(--color-brand-blue-light);
+    color: var(--color-brand-blue-dark);
+    text-decoration: none;
+}
+
+/* ============================================================
+   06. CATEGORY LINK ARROW
+   ============================================================ */
+
+.office-category__arrow {
+    margin-left: var(--spacing-sm);
+    color: var(--color-gray-400);
+    font-size: var(--font-size-small);
+    transition:
+        color
+        var(--transition-fast),
+        transform
+        var(--transition-fast);
+}
+
+.office-category__link:hover .office-category__arrow {
+    color: var(--color-brand-blue);
+    transform: translateX(3px);
+}
+
+/* ============================================================
+   07. CATEGORY LANDING PAGE
+   ============================================================ */
+
+.category-page {
+    width: 100%;
+}
+
+.category-page__header {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+}
+
+.category-page__eyebrow {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-brand-blue-dark);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-heavy);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.category-page__title {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-heavy);
+}
+
+.category-page__description {
+    max-width: 850px;
+    margin-bottom: 0;
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-loose);
+}
+
+/* ============================================================
+   08. SUBCATEGORY GRID
+   ============================================================ */
+
+.subcategory-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+    gap: var(--spacing-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.subcategory-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition:
+        border-color
+        var(--transition-fast),
+        box-shadow
+        var(--transition-fast),
+        transform
+        var(--transition-fast);
+}
+
+.subcategory-card:hover {
+    border-color: var(--color-brand-blue);
+    box-shadow: var(--shadow-small);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.subcategory-card__name {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+}
+
+.subcategory-card__action {
+    color: var(--color-brand-blue-dark);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================================
+   09. OFFICE SUPPLY CATALOG
+   ============================================================ */
+
+.office-catalog {
+    width: 100%;
+}
+
+.office-catalog__category {
+    margin-bottom: var(--spacing-xxl);
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+}
+
+.office-catalog__category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom:
+        2px solid
+        var(--color-brand-blue);
+}
+
+.office-catalog__category-title {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-heavy);
+}
+
+.office-catalog__category-link {
+    color: var(--color-brand-blue-dark);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    white-space: nowrap;
+}
+
+/* ============================================================
+   10. OFFICE SUPPLY PRODUCT GRID
+   ============================================================ */
+
+.office-product-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            5,
+            minmax(0, 1fr)
+        );
+    gap: var(--spacing-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ============================================================
+   11. DESKTOP CATEGORY NAVIGATION
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+    .office-category-menu__grid {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+
+    .office-category:nth-child(4n) {
+        border-right:
+            1px solid
+            var(--color-border-light);
+    }
+
+    .office-category:nth-child(3n) {
+        border-right: none;
+    }
+
+    .subcategory-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .office-product-grid {
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+/* ============================================================
+   12. TABLET CATEGORY NAVIGATION
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+    .office-category-menu__grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .office-category:nth-child(3n) {
+        border-right:
+            1px solid
+            var(--color-border-light);
+    }
+
+    .office-category:nth-child(2n) {
+        border-right: none;
+    }
+
+    .office-product-grid {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+/* ============================================================
+   13. MOBILE CATEGORY NAVIGATION
+   ============================================================ */
+
+@media (max-width: 550px) {
+
+    .office-category-menu__grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .office-category {
+        border-right: none;
+    }
+
+    .office-category__link {
+        min-height: 50px;
+    }
+
+    .subcategory-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .office-product-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .office-catalog__category {
+        padding: var(--spacing-md);
+    }
+
+    .office-catalog__category-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+}
+
+/* ============================================================
+   14. CATEGORY COLOR ACCENTS
+   ============================================================ */
+
+.category-accent--adhesives {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--binders {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--boards {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--calendars {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--carrying-cases {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--cash {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--cutting {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--desk {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--filing {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--forms {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--magnetic-card {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--badges {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--paper {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--office-tools {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--shipping {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--reference {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--stamps {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--staplers {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--tags {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--tapes {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+.category-accent--writing {
+    border-top: 4px solid var(--color-brand-blue);
+}
+
+.category-accent--labels {
+    border-top: 4px solid var(--color-brand-red);
+}
+
+/* ============================================================
+   END OFFICE SUPPLY CATALOG CSS
+   ============================================================ */

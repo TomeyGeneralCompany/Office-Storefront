@@ -1,0 +1,66 @@
+/* ============================================================
+   CSS CUSTOM PROPERTIES & DESIGN SYSTEM
+   ============================================================ */
+
+:root {
+    /* ============================================================
+       Colors
+       ============================================================ */
+    
+    /* Brand Colors */
+    --color-brand-blue: #0066cc;
+    --color-brand-blue-dark: #003d99;
+    --color-brand-blue-light: #e6f2ff;
+    --color-brand-red: #cc3333;
+    
+    /* Neutral Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray-100: #f5f5f5;
+    --color-gray-200: #eeeeee;
+    --color-gray-400: #999999;
+    --color-gray-600: #666666;
+    --color-gray-800: #333333;
+    
+    /* Semantic Colors */
+    --color-border: #dddddd;
+    --color-border-light: #f0f0f0;
+    --color-text-primary: #333333;
+    --color-text-secondary: #666666;
+    
+    /* ============================================================
+       Spacing System
+       ============================================================ */
+    
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    
+    /* ============================================================
+       Typography
+       ============================================================ */
+    
+    /* Font Sizes */
+    --font-size-small: 12px;
+    --font-size-body: 14px;
+    --font-size-large: 16px;
+    --font-size-xl: 24px;
+    --font-size-xxl: 32px;
+    
+    /* Font Weights */
+    --font-weight-bold: 600;
+    --font-weight-heavy: 700;
+    
+    /* Line Height */
+    --line-height-loose: 1.6;
+    
+    /* ============================================================
+       Effects & Transitions
+       ============================================================ */
+    
+    --transition-fast: 200ms ease-in-out;
+    --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

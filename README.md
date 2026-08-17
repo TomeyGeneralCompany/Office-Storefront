@@ -5,7 +5,7 @@ A responsive e-commerce website for office supplies built with HTML, CSS, and a 
 ## 📁 Project Structure
 
 ```
-democodeforproject/
+democode forproject/
 ├── index.html          # Main website structure
 ├── styles.css          # Component styles & responsive design
 ├── variables.css       # Design system (colors, spacing, typography)
