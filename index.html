@@ -15,50 +15,50 @@
         </div>
         <ul class="office-category-menu__grid">
             <li class="office-category">
-                <a href="#adhesives" class="office-category__link">
+                <a href="#" data-category="adhesives" class="office-category__link category-link">
                     <span>Adhesives & Fasteners</span>
                     <span class="office-category__arrow">→</span>
                 </a>
             </li>
             <li class="office-category">
-                <a href="#binders" class="office-category__link">
+                <a href="#" data-category="binders" class="office-category__link category-link">
                     <span>Binders & Binding Supplies</span>
                     <span class="office-category__arrow">→</span>
                 </a>
             </li>
             <li class="office-category">
-                <a href="#boards" class="office-category__link">
+                <a href="#" data-category="boards" class="office-category__link category-link">
                     <span>Boards & Easels</span>
                     <span class="office-category__arrow">→</span>
                 </a>
             </li>
             <li class="office-category">
-                <a href="#calendars" class="office-category__link">
+                <a href="#" data-category="calendars" class="office-category__link category-link">
                     <span>Calendars & Planners</span>
                     <span class="office-category__arrow">→</span>
                 </a>
             </li>
             <li class="office-category">
-                <a href="#carrying-cases" class="office-category__link">
+                <a href="#" data-category="carrying-cases" class="office-category__link category-link">
                     <span>Carrying Cases</span>
                     <span class="office-category__arrow">→</span>
                 </a>
             </li>
             <li class="office-category">
-                <a href="#cash" class="office-category__link">
+                <a href="#" data-category="cash" class="office-category__link category-link">
                     <span>Cash Handling</span>
                     <span class="office-category__arrow">→</span>
                 </a>
             </li>
             <li class="office-category">
-                <a href="#cutting" class="office-category__link">
+                <a href="#" data-category="cutting" class="office-category__link category-link">
                     <span>Cutting & Measuring</span>
                     <span class="office-category__arrow">→</span>
                 </a>
             </li>
             <li class="office-category">
-                <a href="#desk" class="office-category__link">
-                    <span>Desk Accessories</span>
+                <a href="#" data-category="writing" class="office-category__link category-link">
+                    <span>Writing Supplies</span>
                     <span class="office-category__arrow">→</span>
                 </a>
             </li>
@@ -67,50 +67,28 @@
 
     <!-- Category Landing Page -->
     <main>
-        <!-- Adhesives & Fasteners Category -->
-        <section id="adhesives" class="category-page">
+        <!-- Category Title (Changes based on selection) -->
+        <section id="category-display" class="category-page">
             <div class="category-page__header">
                 <div class="category-page__eyebrow">Category</div>
-                <h1 class="category-page__title">Adhesives & Fasteners</h1>
-                <p class="category-page__description">
-                    Quality adhesives and fastening solutions for all your office and workspace needs. From tape and glue to staples and clips, find everything you need to keep your projects together.
+                <h1 class="category-page__title" id="category-title">All Products</h1>
+                <p class="category-page__description" id="category-description">
+                    Browse our complete selection of office supplies for all your workplace needs.
                 </p>
-            </div>
-
-            <div style="padding: 0 var(--spacing-lg); margin-bottom: var(--spacing-xxl);">
-                <ul class="subcategory-grid">
-                    <li>
-                        <a href="#adhesives-glue" class="subcategory-card category-accent--adhesives">
-                            <div class="subcategory-card__name">Glues & Adhesives</div>
-                            <div class="subcategory-card__action">Shop Now →</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#adhesives-tape" class="subcategory-card category-accent--adhesives">
-                            <div class="subcategory-card__name">Tape & Dispensers</div>
-                            <div class="subcategory-card__action">Shop Now →</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#adhesives-fasteners" class="subcategory-card category-accent--adhesives">
-                            <div class="subcategory-card__name">Fasteners</div>
-                            <div class="subcategory-card__action">Shop Now →</div>
-                        </a>
-                    </li>
-                </ul>
+                <a href="#" id="clear-filter" class="clear-filter-btn" style="display: none;">← View All Categories</a>
             </div>
         </section>
 
         <!-- Office Catalog -->
         <div class="office-catalog">
             <!-- Adhesives Category -->
-            <section class="office-catalog__category">
+            <section class="office-catalog__category" data-category="adhesives">
                 <div class="office-catalog__category-header">
                     <h2 class="office-catalog__category-title">Adhesives & Fasteners</h2>
-                    <a href="#" class="office-catalog__category-link">View All →</a>
+                    <a href="#" class="office-catalog__category-link view-all-link">View All →</a>
                 </div>
                 <ul class="office-product-grid">
-                    <li>
+                    <li class="product-item" data-category="adhesives">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -119,7 +97,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$12.99</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="adhesives">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -128,7 +106,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$4.99</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="adhesives">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -137,7 +115,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$3.49</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="adhesives">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -146,7 +124,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$7.99</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="adhesives">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -159,13 +137,13 @@
             </section>
 
             <!-- Writing Supplies Category -->
-            <section class="office-catalog__category">
+            <section class="office-catalog__category" data-category="writing">
                 <div class="office-catalog__category-header">
                     <h2 class="office-catalog__category-title">Writing Supplies</h2>
-                    <a href="#" class="office-catalog__category-link">View All →</a>
+                    <a href="#" class="office-catalog__category-link view-all-link">View All →</a>
                 </div>
                 <ul class="office-product-grid">
-                    <li>
+                    <li class="product-item" data-category="writing">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -174,7 +152,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$8.99</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="writing">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -183,7 +161,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$14.99</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="writing">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -192,7 +170,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$5.49</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="writing">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -201,7 +179,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$6.99</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="writing">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -214,13 +192,13 @@
             </section>
 
             <!-- Paper Products Category -->
-            <section class="office-catalog__category">
+            <section class="office-catalog__category" data-category="paper">
                 <div class="office-catalog__category-header">
                     <h2 class="office-catalog__category-title">Notebooks, Pads & Paper</h2>
-                    <a href="#" class="office-catalog__category-link">View All →</a>
+                    <a href="#" class="office-catalog__category-link view-all-link">View All →</a>
                 </div>
                 <ul class="office-product-grid">
-                    <li>
+                    <li class="product-item" data-category="paper">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -229,7 +207,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$3.99</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="paper">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -238,7 +216,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$4.49</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="paper">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -247,7 +225,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$6.99</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="paper">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -256,7 +234,7 @@
                             <div style="color: var(--color-brand-blue-dark); font-weight: var(--font-weight-bold);">$5.99</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="product-item" data-category="paper">
                         <div style="padding: var(--spacing-md); background-color: var(--color-gray-100); border-radius: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);">
                             Product Image
                         </div>
@@ -273,5 +251,119 @@
     <footer style="padding: var(--spacing-lg); background-color: var(--color-gray-800); color: var(--color-white); text-align: center; margin-top: var(--spacing-xxl);">
         <p>&copy; 2024 Office Supply Storefront. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Category descriptions
+        const categoryDescriptions = {
+            adhesives: {
+                title: "Adhesives & Fasteners",
+                description: "Quality adhesives and fastening solutions for all your office and workspace needs. From tape and glue to staples and clips, find everything you need to keep your projects together."
+            },
+            binders: {
+                title: "Binders & Binding Supplies",
+                description: "Professional binding supplies to organize and present your documents. Choose from a variety of sizes and styles."
+            },
+            boards: {
+                title: "Boards & Easels",
+                description: "Display and presentation solutions for meetings and collaborative work."
+            },
+            calendars: {
+                title: "Calendars & Planners",
+                description: "Stay organized with our selection of calendars and planning tools."
+            },
+            "carrying-cases": {
+                title: "Carrying Cases",
+                description: "Protective cases for transporting your office supplies and equipment."
+            },
+            cash: {
+                title: "Cash Handling",
+                description: "Professional cash management solutions for retail and office environments."
+            },
+            cutting: {
+                title: "Cutting & Measuring Devices",
+                description: "Precision tools for cutting and measuring."
+            },
+            writing: {
+                title: "Writing Supplies",
+                description: "Complete selection of pens, pencils, markers, and writing instruments for every need."
+            },
+            paper: {
+                title: "Notebooks, Pads & Paper",
+                description: "Quality paper products for note-taking and documentation."
+            }
+        };
+
+        // Get all category links and set up event listeners
+        const categoryLinks = document.querySelectorAll('.category-link');
+        const clearFilterBtn = document.getElementById('clear-filter');
+
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const category = link.getAttribute('data-category');
+                filterByCategory(category);
+            });
+        });
+
+        // Clear filter button
+        clearFilterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showAllProducts();
+        });
+
+        // View All buttons
+        const viewAllLinks = document.querySelectorAll('.view-all-link');
+        viewAllLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = link.closest('.office-catalog__category');
+                const category = section.getAttribute('data-category');
+                filterByCategory(category);
+            });
+        });
+
+        function filterByCategory(category) {
+            // Hide all category sections
+            const sections = document.querySelectorAll('.office-catalog__category');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show only the selected category
+            const selectedSection = document.querySelector(`.office-catalog__category[data-category="${category}"]`);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+
+            // Update the category title and description
+            const categoryInfo = categoryDescriptions[category] || {};
+            document.getElementById('category-title').textContent = categoryInfo.title || 'Category';
+            document.getElementById('category-description').textContent = categoryInfo.description || '';
+
+            // Show the clear filter button
+            clearFilterBtn.style.display = 'inline-block';
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function showAllProducts() {
+            // Show all category sections
+            const sections = document.querySelectorAll('.office-catalog__category');
+            sections.forEach(section => {
+                section.style.display = 'block';
+            });
+
+            // Reset the title and description
+            document.getElementById('category-title').textContent = 'All Products';
+            document.getElementById('category-description').textContent = 'Browse our complete selection of office supplies for all your workplace needs.';
+
+            // Hide the clear filter button
+            clearFilterBtn.style.display = 'none';
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
