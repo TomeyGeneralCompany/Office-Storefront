@@ -7,6 +7,98 @@
 <title>Office Supply Storefront</title>
 <link href="variables.css" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
+
+<style id="storefront-visual-refresh">
+:root{
+  --sf-bg:#f4f6f8;
+  --sf-surface:#ffffff;
+  --sf-surface-2:#f8fafc;
+  --sf-text:#17212b;
+  --sf-muted:#66727f;
+  --sf-border:#dbe2e8;
+  --sf-border-strong:#c9d3dc;
+  --sf-accent:#0b5cab;
+  --sf-accent-dark:#084881;
+  --sf-accent-soft:#eaf3fb;
+  --sf-success:#18794e;
+  --sf-success-soft:#eaf7f0;
+  --sf-shadow:0 1px 2px rgba(15,23,42,.05),0 8px 24px rgba(15,23,42,.06);
+  --sf-shadow-hover:0 3px 8px rgba(15,23,42,.08),0 18px 40px rgba(15,23,42,.10);
+  --sf-radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--sf-bg)}
+body{margin:0;background:var(--sf-bg);color:var(--sf-text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.office-category-menu,main{width:min(1440px,calc(100% - 40px));margin-inline:auto}
+.office-category-menu{margin-top:28px;background:var(--sf-surface);border:1px solid var(--sf-border);border-radius:18px;box-shadow:var(--sf-shadow);overflow:hidden}
+.office-category-menu__header{padding:20px 24px 16px;font-size:.78rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--sf-muted);border-bottom:1px solid var(--sf-border);background:linear-gradient(180deg,#fff,#fbfcfd)}
+.office-category-menu__grid{list-style:none;padding:10px;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px}
+.office-category{margin:0}
+.office-category__link{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 14px;border-radius:10px;text-decoration:none;font-size:.9rem;font-weight:650;color:#334155;transition:background .16s ease,color .16s ease,transform .16s ease}
+.office-category__link:hover{background:var(--sf-accent-soft);color:var(--sf-accent);transform:translateY(-1px)}
+.office-category__arrow{font-size:1rem;opacity:.55;transition:transform .16s ease,opacity .16s ease}
+.office-category__link:hover .office-category__arrow{transform:translateX(3px);opacity:1}
+main{padding-top:26px;padding-bottom:20px}
+.category-page{position:relative;overflow:hidden;background:linear-gradient(135deg,#0d4f8b 0%,#0b5cab 58%,#1475c9 100%);border-radius:20px;box-shadow:var(--sf-shadow);margin-bottom:26px;color:#fff}
+.category-page:after{content:"";position:absolute;right:-110px;top:-160px;width:390px;height:390px;border-radius:999px;border:70px solid rgba(255,255,255,.07);pointer-events:none}
+.category-page__header{position:relative;z-index:1;padding:34px 38px 36px;max-width:900px}
+.category-page__eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#cfe8ff;margin-bottom:8px}
+.category-page__title{margin:0 0 10px;font-size:clamp(2rem,4vw,3.35rem);line-height:1.02;letter-spacing:-.035em;font-weight:780}
+.category-page__description{margin:0;max-width:760px;color:#e9f4ff;font-size:1rem;line-height:1.65}
+.clear-filter-btn{display:inline-flex!important;align-items:center;gap:8px;margin-top:22px;padding:9px 13px;border-radius:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);color:#fff;text-decoration:none;font-size:.86rem;font-weight:700;backdrop-filter:blur(8px)}
+.clear-filter-btn[style*="display: none"]{display:none!important}
+.clear-filter-btn:hover{background:rgba(255,255,255,.2)}
+.office-catalog{display:flex;flex-direction:column;gap:24px}
+.office-catalog__category{background:var(--sf-surface);border:1px solid var(--sf-border);border-radius:16px;padding:22px;box-shadow:0 1px 2px rgba(15,23,42,.035)}
+.office-catalog__category-header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--sf-border)}
+.office-catalog__category-title{margin:0;font-size:1.22rem;letter-spacing:-.015em;font-weight:760;color:#1e293b}
+.office-catalog__category-link{color:var(--sf-accent);text-decoration:none;font-size:.85rem;font-weight:760;white-space:nowrap}
+.office-catalog__category-link:hover{text-decoration:underline;text-underline-offset:3px}
+.subcategory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px}
+.subcategory-card{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:54px;padding:12px 14px;border:1px solid var(--sf-border);border-radius:10px;background:var(--sf-surface-2);text-decoration:none;transition:border-color .16s ease,background .16s ease,transform .16s ease,box-shadow .16s ease}
+.subcategory-card:hover{border-color:#9fc5e8;background:#f5faff;transform:translateY(-1px);box-shadow:0 4px 14px rgba(15,23,42,.05)}
+.subcategory-card__name{font-size:.86rem;font-weight:670;color:#334155}
+.subcategory-card__action{font-size:.75rem;font-weight:760;color:var(--sf-accent);white-space:nowrap}
+.office-catalog__category-products{margin-top:-8px}
+.product-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(285px,1fr))!important;gap:16px!important;margin-top:0!important;align-items:stretch}
+.product-card{position:relative;display:flex!important;flex-direction:column;min-width:0;min-height:325px;border:1px solid var(--sf-border)!important;border-radius:var(--sf-radius)!important;padding:18px!important;background:var(--sf-surface);box-shadow:0 1px 2px rgba(15,23,42,.035);overflow:hidden;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.product-card:hover{transform:translateY(-3px);border-color:#b9c8d6!important;box-shadow:var(--sf-shadow-hover)}
+.product-card__category{display:inline-flex;align-self:flex-start;max-width:100%;margin-bottom:13px;padding:5px 8px;border-radius:6px;background:#eef3f7;color:#526273;font-size:.68rem!important;font-weight:800;letter-spacing:.075em!important;text-transform:uppercase;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:1!important}
+.product-card h3{margin:0 0 14px;font-size:.98rem;line-height:1.42;font-weight:690;letter-spacing:-.008em;color:#182330;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;min-height:5.6em}
+.product-card p{margin:0;color:var(--sf-muted);font-size:.82rem;line-height:1.45}
+.product-card p+p{margin-top:7px}
+.product-card__model{padding-top:12px;border-top:1px solid #edf1f4}
+.product-card__model strong{color:#64748b;font-weight:700}
+.product-card__price-row{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-top:auto!important;padding-top:15px}
+.product-card__price-row strong:first-child{font-size:1.42rem;line-height:1;font-weight:800;letter-spacing:-.03em;color:#0f172a}
+.product-card__price-row s{font-size:.78rem;color:#94a3b8}
+.product-card__unit{color:#64748b!important;font-size:.76rem!important}
+.product-card__autoship{margin-top:11px!important;padding:8px 10px;border-radius:8px;background:var(--sf-success-soft);color:var(--sf-success)!important;font-size:.76rem!important;font-weight:650}
+.product-card__autoship strong{color:inherit}
+.product-card__save{position:absolute;top:14px;right:14px;padding:4px 7px;border-radius:999px;background:#fff4e5;color:#9a4d00;font-size:.67rem;font-weight:800;box-shadow:0 0 0 1px #f4d8aa}
+footer{width:min(1440px,calc(100% - 40px));margin:34px auto 26px!important;padding:22px 28px!important;background:#182330!important;border-radius:16px!important;color:#cbd5e1!important;text-align:center!important;font-size:.82rem;box-shadow:var(--sf-shadow)}
+footer p{margin:0}
+@media (max-width:720px){
+  .office-category-menu,main,footer{width:min(100% - 24px,1440px)}
+  .office-category-menu{margin-top:12px;border-radius:14px}
+  .office-category-menu__grid{grid-template-columns:1fr 1fr}
+  .office-category__link{padding:10px;font-size:.8rem}
+  main{padding-top:14px}
+  .category-page{border-radius:15px}
+  .category-page__header{padding:26px 22px 28px}
+  .office-catalog__category{padding:16px;border-radius:13px}
+  .office-catalog__category-header{align-items:flex-start}
+  .subcategory-grid{grid-template-columns:1fr 1fr}
+  .product-grid{grid-template-columns:1fr!important}
+  .product-card{min-height:0}
+}
+@media (max-width:460px){
+  .office-category-menu__grid,.subcategory-grid{grid-template-columns:1fr}
+  .office-catalog__category-header{flex-direction:column;gap:7px}
+}
+</style>
+
 </head>
 <body>
 <!-- Category Navigation Menu -->
@@ -4269,6 +4361,45 @@
 <footer style="padding: var(--spacing-lg); background-color: var(--color-gray-800); color: var(--color-white); text-align: center; margin-top: var(--spacing-xxl);">
 <p>© 2024 Office Supply Storefront. All rights reserved.</p>
 </footer>
+
+<script id="storefront-visual-enhancements">
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.product-card').forEach(card => {
+    const category = card.querySelector(':scope > div');
+    if (category) category.classList.add('product-card__category');
+
+    const paragraphs = Array.from(card.querySelectorAll(':scope > p'));
+    if (paragraphs[0]) paragraphs[0].classList.add('product-card__model');
+
+    const priceRow = paragraphs.find(p => p.querySelector('s') || /^\s*\$[\d,.]+/.test(p.textContent.replace(/\s+/g,' ')));
+    if (priceRow) {
+      priceRow.classList.add('product-card__price-row');
+      const current = priceRow.querySelector('strong');
+      const original = priceRow.querySelector('s');
+      if (current && original) {
+        const currentValue = parseFloat(current.textContent.replace(/[^\d.]/g,''));
+        const originalValue = parseFloat(original.textContent.replace(/[^\d.]/g,''));
+        if (Number.isFinite(currentValue) && Number.isFinite(originalValue) && originalValue > currentValue) {
+          const discount = Math.round((1 - currentValue / originalValue) * 100);
+          if (discount >= 5) {
+            const badge = document.createElement('span');
+            badge.className = 'product-card__save';
+            badge.textContent = `Save ${discount}%`;
+            card.appendChild(badge);
+          }
+        }
+      }
+    }
+
+    paragraphs.forEach(p => {
+      const text = p.textContent.trim();
+      if (/AutoShip Eligible|Crave\s*&\s*Save Autoship/i.test(text)) p.classList.add('product-card__autoship');
+      else if (p !== paragraphs[0] && p !== priceRow) p.classList.add('product-card__unit');
+    });
+  });
+});
+</script>
+
 <script>
         // Category descriptions
         const categoryDescriptions = {
