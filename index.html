@@ -4519,45 +4519,65 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Filter products by subcategory within whichever category was clicked.
-        // Some legacy subcategory cards do not have data-subcategory-filter, so
-        // fall back to the visible card name instead of requiring markup changes.
-        document.querySelectorAll('.subcategory-card').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
+        // Universal subcategory filtering. Every subcategory card in every category
+        // follows the exact same rule: hide everything except products whose
+        // data-subcategory exactly matches the selected subcategory.
+        function filterBySubcategory(category, subcategory) {
+            const wanted = (subcategory || '').trim();
+            if (!category || !wanted) return;
 
-                const categorySection = link.closest('.office-catalog__category');
-                if (!categorySection) return;
+            // Hide every category chooser and every product section first so the
+            // selected subcategory becomes the only visible catalog content.
+            document.querySelectorAll('.office-catalog__category, .office-catalog__category-products').forEach(section => {
+                section.style.display = 'none';
+            });
 
-                const category = categorySection.getAttribute('data-category');
-                const nameEl = link.querySelector('.subcategory-card__name');
-                const subcategory = link.getAttribute('data-subcategory-filter') ||
-                    (nameEl ? nameEl.textContent.trim() : '');
+            const productSection = document.querySelector(
+                `.office-catalog__category-products[data-category-products="${category}"]`
+            );
 
-                if (!category || !subcategory) return;
+            let visibleCount = 0;
+            if (productSection) {
+                productSection.style.display = 'block';
+                productSection.querySelectorAll('.product-grid').forEach(grid => {
+                    grid.style.display = 'grid';
+                });
 
-                // Enter the selected category first so unrelated categories disappear.
-                filterByCategory(category);
-
-                const productSection = document.querySelector(
-                    `.office-catalog__category-products[data-category-products="${category}"]`
-                );
-                if (!productSection) return;
-
-                let visibleCount = 0;
                 productSection.querySelectorAll('.product-card').forEach(card => {
-                    const matches = card.getAttribute('data-subcategory') === subcategory;
+                    const cardSubcategory = (card.getAttribute('data-subcategory') || '').trim();
+                    const matches = cardSubcategory === wanted;
                     card.classList.toggle('is-filtered-out', !matches);
                     if (matches) visibleCount += 1;
                 });
+            }
 
-                const categoryInfo = categoryDescriptions[category] || {};
-                document.getElementById('category-title').textContent =
-                    `${categoryInfo.title || 'Category'} — ${subcategory}`;
-                document.getElementById('category-description').textContent = visibleCount
-                    ? `Showing ${visibleCount} product${visibleCount === 1 ? '' : 's'} in ${subcategory}.`
-                    : `No products are currently listed in ${subcategory}.`;
-            });
+            const categoryInfo = categoryDescriptions[category] || {};
+            document.getElementById('category-title').textContent =
+                `${categoryInfo.title || 'Category'} — ${wanted}`;
+            document.getElementById('category-description').textContent = visibleCount
+                ? `Showing ${visibleCount} product${visibleCount === 1 ? '' : 's'} in ${wanted}.`
+                : `No products are currently listed in ${wanted}.`;
+            clearFilterBtn.style.display = 'inline-block';
+            window.scrollTo(0, 0);
+        }
+
+        // Event delegation makes the behavior apply to every current and future
+        // subcategory card instead of wiring category-specific handlers.
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('.subcategory-card');
+            if (!link) return;
+
+            e.preventDefault();
+
+            const categorySection = link.closest('.office-catalog__category');
+            if (!categorySection) return;
+
+            const category = categorySection.getAttribute('data-category');
+            const nameEl = link.querySelector('.subcategory-card__name');
+            const subcategory = link.getAttribute('data-subcategory-filter') ||
+                (nameEl ? nameEl.textContent.trim() : '');
+
+            filterBySubcategory(category, subcategory);
         });
 
         function filterByCategory(category) {
