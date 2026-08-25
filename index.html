@@ -63,6 +63,7 @@ main{padding-top:26px;padding-bottom:20px}
 .office-catalog__category-products{margin-top:-8px}
 .product-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(285px,1fr))!important;gap:16px!important;margin-top:0!important;align-items:stretch}
 .product-card{position:relative;display:flex!important;flex-direction:column;min-width:0;min-height:325px;border:1px solid var(--sf-border)!important;border-radius:var(--sf-radius)!important;padding:18px!important;background:var(--sf-surface);box-shadow:0 1px 2px rgba(15,23,42,.035);overflow:hidden;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.product-card.is-filtered-out{display:none!important}
 .product-card:hover{transform:translateY(-3px);border-color:#b9c8d6!important;box-shadow:var(--sf-shadow-hover)}
 .product-card__category{display:inline-flex;align-self:flex-start;max-width:100%;margin-bottom:13px;padding:5px 8px;border-radius:6px;background:#eef3f7;color:#526273;font-size:.68rem!important;font-weight:800;letter-spacing:.075em!important;text-transform:uppercase;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:1!important}
 .product-card h3{margin:0 0 14px;font-size:.98rem;line-height:1.42;font-weight:690;letter-spacing:-.008em;color:#182330;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;min-height:5.6em}
@@ -4546,7 +4547,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let visibleCount = 0;
                 productSection.querySelectorAll('.product-card').forEach(card => {
                     const matches = card.getAttribute('data-subcategory') === subcategory;
-                    card.style.display = matches ? '' : 'none';
+                    card.classList.toggle('is-filtered-out', !matches);
                     if (matches) visibleCount += 1;
                 });
 
@@ -4580,7 +4581,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     grid.style.display = 'grid';
                 });
                 selectedProducts.querySelectorAll('.product-card').forEach(card => {
-                    card.style.display = '';
+                    card.classList.remove('is-filtered-out');
                 });
             }
 
@@ -4600,7 +4601,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 grid.style.display = 'grid';
             });
             document.querySelectorAll('.office-catalog__category-products .product-card').forEach(card => {
-                card.style.display = '';
+                card.classList.remove('is-filtered-out');
             });
 
             document.getElementById('category-title').textContent = 'All Products';
