@@ -4518,17 +4518,44 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Filter products within Adhesives & Fasteners by supplier subcategory
-        document.querySelectorAll('[data-subcategory-filter]').forEach(link => {
+        // Filter products by subcategory within whichever category was clicked.
+        // Some legacy subcategory cards do not have data-subcategory-filter, so
+        // fall back to the visible card name instead of requiring markup changes.
+        document.querySelectorAll('.subcategory-card').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const subcategory = link.getAttribute('data-subcategory-filter');
-                document.querySelectorAll('#adhesives-product-grid .product-card').forEach(card => {
-                    card.style.display = card.getAttribute('data-subcategory') === subcategory ? 'block' : 'none';
+
+                const categorySection = link.closest('.office-catalog__category');
+                if (!categorySection) return;
+
+                const category = categorySection.getAttribute('data-category');
+                const nameEl = link.querySelector('.subcategory-card__name');
+                const subcategory = link.getAttribute('data-subcategory-filter') ||
+                    (nameEl ? nameEl.textContent.trim() : '');
+
+                if (!category || !subcategory) return;
+
+                // Enter the selected category first so unrelated categories disappear.
+                filterByCategory(category);
+
+                const productSection = document.querySelector(
+                    `.office-catalog__category-products[data-category-products="${category}"]`
+                );
+                if (!productSection) return;
+
+                let visibleCount = 0;
+                productSection.querySelectorAll('.product-card').forEach(card => {
+                    const matches = card.getAttribute('data-subcategory') === subcategory;
+                    card.style.display = matches ? '' : 'none';
+                    if (matches) visibleCount += 1;
                 });
-                document.querySelectorAll('#adhesives-product-grid .product-card').forEach(card => {
-                    if (card.getAttribute('data-subcategory') === subcategory) card.style.display = 'block';
-                });
+
+                const categoryInfo = categoryDescriptions[category] || {};
+                document.getElementById('category-title').textContent =
+                    `${categoryInfo.title || 'Category'} — ${subcategory}`;
+                document.getElementById('category-description').textContent = visibleCount
+                    ? `Showing ${visibleCount} product${visibleCount === 1 ? '' : 's'} in ${subcategory}.`
+                    : `No products are currently listed in ${subcategory}.`;
             });
         });
 
