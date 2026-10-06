@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">All by Devoll LLC</title>
+  <desc id="desc">Custom circular logo featuring a teal road scene, lighthouse, and a stylized pickup truck in gold and teal.</desc>
+  <defs>
+    <style>
+      .outer-ring { fill: none; stroke: #d79d2d; stroke-width: 26; }
+      .badge-bg { fill: #f3f3f3; }
+      .teal-bg { fill: #49d3d8; }
+      .gold { fill: #d89b2c; }
+      .gold-dark { fill: #b87500; }
+      .gold-soft { fill: #f4d58f; }
+      .cream { fill: #f7f1e6; }
+      .ink { fill: #1a1d1d; }
+      .road { fill: #d7a228; }
+      .road-line { fill: #f7f2ea; }
+      .text-main { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 700; }
+      .text-sub { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 700; }
+    </style>
+  </defs>
+
+  <circle class="badge-bg" cx="450" cy="450" r="395"/>
+  <circle class="outer-ring" cx="450" cy="450" r="395"/>
+
+  <g>
+    <text x="450" y="165" text-anchor="middle" class="text-main" font-size="120" fill="#d89b2c">All by Devoll</text>
+    <text x="450" y="705" text-anchor="middle" class="text-sub" font-size="112" fill="#d89b2c">LLC.</text>
+  </g>
+
+  <g>
+    <path d="M190 458 L705 458 L705 481 L190 481 Z" fill="#5eced5"/>
+    <path d="M240 420 L315 360 L390 410 L445 350 L515 420 L610 350 L680 420 L710 420 L710 460 L190 460 L190 420 Z" fill="#49d3d8"/>
+    <path d="M255 336 L325 336 L325 420 L255 420 Z" fill="#eef7f7" opacity="0.75"/>
+    <path d="M192 420 L280 420 L280 340 L253 340 L228 358 L192 358 Z" fill="#eef7f7" opacity="0.75"/>
+    <path d="M443 420 L540 420 L540 340 L480 340 L443 360 Z" fill="#eef7f7" opacity="0.75"/>
+  </g>
+
+  <g>
+    <path d="M257 228 L295 198 L332 228 L332 298 L257 298 Z" fill="#f5f6f5"/>
+    <path d="M284 169 L290 186 L262 196 L262 228 L332 228 L332 195 L303 184 L307 169 Z" fill="#f5f6f5"/>
+    <path d="M272 198 L295 180 L321 198" fill="none" stroke="#d89b2c" stroke-width="8" stroke-linecap="round"/>
+    <path d="M295 170 L295 224" stroke="#d89b2c" stroke-width="6"/>
+    <path d="M262 196 L332 196" stroke="#d89b2c" stroke-width="6"/>
+    <path d="M246 211 L126 211 L172 158 L246 158 Z" fill="#d89b2c" opacity="0.75"/>
+    <path d="M248 211 L126 211 L163 244 L248 244 Z" fill="#f7f1e4" opacity="0.75"/>
+    <path d="M230 211 L230 244" stroke="#d89b2c" stroke-width="8" stroke-linecap="round"/>
+    <path d="M192 211 L192 244" stroke="#d89b2c" stroke-width="8" stroke-linecap="round"/>
+    <path d="M160 211 L160 244" stroke="#d89b2c" stroke-width="8" stroke-linecap="round"/>
+    <path d="M180 154 L216 154" stroke="#d89b2c" stroke-width="6"/>
+  </g>
+
+  <g>
+    <path d="M150 538 L742 538 L742 610 L150 610 Z" fill="#d89b2c"/>
+    <path d="M170 545 C250 475, 620 475, 732 545 L732 594 L170 594 Z" fill="#d89b2c"/>
+    <path d="M199 548 L700 548 L700 594 L199 594 Z" fill="#f8f1e6" opacity="0.6"/>
+    <rect x="289" y="502" width="314" height="92" rx="16" fill="#d89b2c"/>
+    <rect x="324" y="470" width="246" height="54" rx="16" fill="#d89b2c"/>
+    <path d="M306 470 L350 420 L466 420 L526 470 Z" fill="#f2d8a2"/>
+    <path d="M350 470 L370 420 L574 420 L548 470 Z" fill="#f2d8a2"/>
+    <path d="M289 496 H605 L605 522 H289 Z" fill="#e2ab3d"/>
+
+    <path d="M218 530 L230 610 L281 610 L292 530 Z" fill="#d89b2c"/>
+    <path d="M611 530 L624 610 L673 610 L683 530 Z" fill="#d89b2c"/>
+
+    <circle cx="310" cy="610" r="42" fill="#f8f1e6"/>
+    <circle cx="635" cy="610" r="42" fill="#f8f1e6"/>
+    <circle cx="310" cy="610" r="24" fill="#1a1d1d"/>
+    <circle cx="635" cy="610" r="24" fill="#1a1d1d"/>
+    <circle cx="272" cy="610" r="10" fill="#f8f1e6"/>
+    <circle cx="672" cy="610" r="10" fill="#f8f1e6"/>
+
+    <circle cx="415" cy="437" r="35" fill="#f8f1e6"/>
+    <circle cx="513" cy="437" r="35" fill="#f8f1e6"/>
+    <circle cx="400" cy="436" r="11" fill="#1a1d1d"/>
+    <circle cx="500" cy="436" r="11" fill="#1a1d1d"/>
+    <circle cx="378" cy="428" r="5" fill="#1a1d1d"/>
+    <circle cx="520" cy="428" r="5" fill="#1a1d1d"/>
+
+    <path d="M335 431 C350 421 386 424 405 433" fill="none" stroke="#1a1d1d" stroke-width="8" stroke-linecap="round"/>
+    <path d="M480 433 C503 421 540 424 557 432" fill="none" stroke="#1a1d1d" stroke-width="8" stroke-linecap="round"/>
+    <path d="M458 462 C470 476 490 478 502 462" fill="none" stroke="#1a1d1d" stroke-width="8" stroke-linecap="round"/>
+    <path d="M460 488 H510" stroke="#1a1d1d" stroke-width="8" stroke-linecap="round"/>
+
+    <path d="M272 592 L328 592" stroke="#d89b2c" stroke-width="7"/>
+    <path d="M618 592 L673 592" stroke="#d89b2c" stroke-width="7"/>
+  </g>
+
+  <g>
+    <path d="M195 610 H705 L705 640 H195 Z" fill="#d89b2c"/>
+    <path d="M0 670 C120 630, 210 622, 290 634 C395 649, 430 668, 500 664 C606 659, 693 620, 900 655 L900 900 L0 900 Z" fill="#d89b2c" opacity="0.34"/>
+    <path d="M150 670 H754 L754 680 H150 Z" fill="#f7f2ea" opacity="0.78"/>
+  </g>
+</svg>
